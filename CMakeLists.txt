@@ -85,6 +85,8 @@ if (OPENMP_FOUND)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 endif()
 
+set (CMAKE_SHARED_LINKER_FLAGS "-lXCursor -lXRandR")
+
 foreach(EXAMPLE ${EXAMPLES})
   add_executable(${EXAMPLE} WIN32 src/${EXAMPLE}/${EXAMPLE}.cpp ${COMMON_HEADERS})
   set_property(TARGET ${EXAMPLE} PROPERTY DEBUG_POSTFIX _d)
